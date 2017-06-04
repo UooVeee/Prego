@@ -12,7 +12,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3" style="border:1px solid #ccc;margin-left:5px;padding:10px;">
+            <!-- <div class="col-md-3" style="border:1px solid #ccc;margin-left:5px;padding:10px;">
               <p>Due : {!! date_format(new DateTime($project->due_date), "D, m Y") !!}</p>
               <p>Status: {!! $project->project_status !!}</p>
               <p>Tasks: {{ count($tasks) }} </p>
@@ -24,14 +24,21 @@
                           data-token="{{csrf_token()}}">
                     <i class="fa fa-trash-o"></i>Delete
                   </button>
-            </div>
+            </div> -->
             @include('collaborators.form')
         </div>
+
+       
         <hr>
         <div class="row">
-            @include('tasks.form')
-            @include('files.form')
-        </div>
+    <!--         @include('tasks.form')
+            @include('files.form') -->
+              <button class="btn btn-circle btn-danger delete"
+                          data-action="{{ url('projects/setFlag/' . $project->id) }}"
+                          data-token="{{csrf_token()}}">
+                           <i class="fa fa-trash-o"></i>Raise Flag
+                           </button>
+        </div> 
         <hr>
         <div class="row">
             @include('comments.form')

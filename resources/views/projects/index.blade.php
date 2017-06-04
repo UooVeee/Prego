@@ -6,8 +6,8 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     @include('layouts.partials.alerts')
     <h1 class="page-header">
-        Projects
-        <a class="btn btn-info" href="{{ route('projects.create') }}">New Project</a>
+        Todo List
+        <a class="btn btn-info" href="{{ route('projects.create') }}">New Todo</a>
     </h1>
 
     <div class="container">

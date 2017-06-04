@@ -60,7 +60,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return redirect()->route('projects.index')->with('info','Your Project has been created successfully');
+        return redirect()->route('projects.index')->with('info','Your Task has been created successfully');
     }
 
     /**
@@ -161,7 +161,7 @@ class ProjectController extends Controller
         $values = $request->all();
         $project->fill($values)->save();
 
-        return redirect()->back()->with('info','Your Project has been updated successfully');
+        return redirect()->back()->with('info','Your Task has been updated successfully');
     }
 
     /**
@@ -175,6 +175,6 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
         $project->delete();
 
-        return redirect()->route('projects.index')->with('info', 'Project deleted successfully');
+        return redirect()->route('projects.index')->with('info', 'Task deleted successfully');
     }
 }
